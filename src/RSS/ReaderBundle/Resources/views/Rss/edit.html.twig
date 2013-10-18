@@ -1,0 +1,17 @@
+{% extends 'RSSReaderBundle::layout.html.twig' %}
+{% block title "RSS Feeds Edit" %}
+
+{% block content -%}
+    <h1>Rss edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+            <li>{{ form(delete_form) }}</li>
+            <li>
+                <a href="{{ path('rss_list') }}">
+                    Back to the list
+                </a>
+            </li>
+        </ul>
+{% endblock %}

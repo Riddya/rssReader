@@ -1,0 +1,226 @@
+/* КНОПКА НАВЕРХ */
+
+.to_top{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    width:7%;
+    display:none;
+    background-color: #87ceeb;
+    opacity: 0.3;
+}
+
+.to_top_opacity{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    width:7%;
+    background-color: #87ceeb;
+    opacity: 0.1;
+}
+.to_top .to_top_panel{
+    width:100%;
+    height:100%;
+    font-size:13px;
+    color: black;
+    padding-top:10px;
+    position:relative;
+}
+.to_top .to_top_button{
+    text-align:left;
+    line-height:15px;
+    margin-left: 30%;
+    font-family:tahoma,arial,verdana,sans-serif;
+    font-weight:bold;
+    opacity: 0.2;
+}
+.to_top .to_top_button .arrow{
+    font-size:14px;
+    font-weight:bold;
+    vertical-align:middle;
+}
+
+/* КОНЕЦ КНОПКИ НАВЕРХ */
+
+
+
+
+/* ОБЩИЕ СТИЛИ */
+
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Times New Roman";
+    font-size: 13px;
+}
+
+textarea {
+    resize: none;
+    width: 300px;
+    box-shadow: inset 0px 0px 10px black;
+    padding: 5px;
+    resize:vertical;
+    max-height:200px;
+    min-height:30px;
+    font-size: 13pt;
+}
+input {
+    width: 300px;
+    height: 30px;
+    box-shadow: inset 0px 0px 10px black;
+}
+
+textarea.horiz {
+    resize:horizontal;
+    max-width:400px;
+    min-width:300px;
+}
+
+label {
+    font-size: 16px;
+    clear: both;
+    margin-right: 15px;
+}
+
+table {
+    width: 100%;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 0px 0px 0px red;
+
+}
+
+th {
+    font-size: 16px;
+    border: 2px solid #2f4f4f;
+    text-align: center;
+}
+
+td, tr, thead {
+    width: 200px;
+    border: 2px solid #2f4f4f;
+    padding: 10px;
+}
+
+button {
+    background: -webkit-linear-gradient(90deg,white,#808080);
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid grey;
+    font-weight: bolder;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+button:hover {
+    box-shadow: 0px 0px 2px black;
+}
+
+button:active {
+    box-shadow: none;
+    border: 1px solid #d3d3d3;
+}
+
+label {
+    display: block;
+    clear: both;
+    float: left;
+    font-size: 15pt;
+    width: 70px;
+}
+
+label:after {
+    content: ": "
+}
+
+
+/* КОНЕЦ ОБЩИХ СТИЛЕЙ  */
+
+
+
+.dropActive {
+    background-color: #e0ffff;
+}
+
+.dropHover {
+    background-color: #87ceeb;
+}
+
+.cloudActive {
+    border: 1px dotted black;
+}
+
+.cloudHover {
+    background-color: #d3d3d3;
+}
+
+
+.ui-autocomplete-loading {
+    background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+
+.index_message {
+    font-size: 20px;
+    text-shadow: 0px 0px 1px grey;
+    -webkit-transform: rotate(-3deg);
+    display: block;
+}
+
+.delete_img {
+    width: 20px;
+    height: 20px;
+    padding-left: 5px;
+}
+
+.delete_img:hover {
+    opacity: 0.6;
+}
+
+.rss_name {
+    width: auto;
+    height: auto;
+    overflow: auto;
+    float: left;
+    margin: 5px !important;
+    padding: 5px !important;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.rss_tags {
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    float: left;
+    margin: 3px !important;
+    text-decoration: underline;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+.tag {
+    width: auto;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 2px !important;
+    overflow: auto;
+    float: left;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+    padding: 0px 4px !important;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

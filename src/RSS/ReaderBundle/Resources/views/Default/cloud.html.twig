@@ -1,0 +1,5 @@
+<div id="cloud" style="width: 100%; height: auto; overflow: auto; border-radius: 3px;">
+    {% for tag in tags %}
+        <div id="draggable" data-tag-name = "{{ tag.tag }}" style="width: auto; height: 30px; overflow: auto; float: left;"><a style="font-size: {{ tag.size }}px" href="{{ path('show_tag_rss', {'name' : tag.tag}) }}">{{ tag.tag }}</a>{% if tag != tags|last %},&nbsp;{% endif %}</div>
+    {% endfor %}
+</div>

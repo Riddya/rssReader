@@ -1,0 +1,37 @@
+{% extends 'RSSReaderBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Tags</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                <td>{{ entity.tag }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('tags_new') }}">
+            Add a new tag
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('tags') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('tags_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

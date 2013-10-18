@@ -1,0 +1,19 @@
+{% extends 'RSSReaderBundle::layout.html.twig' %}
+{% block title "RSS DRAG&DROP" %}
+
+{% block content -%}
+    {{ render(controller('RSSReaderBundle:Default:cloud')) }}<br>
+    <a href="{{ path("rss_list") }}">To RSS List</a><br>
+    <a href="{{ path("home") }}">To Home Page</a>
+    <hr><hr>
+    <div id="tmp" style="width: 100%; height: auto; overflow: auto; margin-top: 30px">
+        {% for entities in temp %}
+            <div style = "width: 50%; height: auto; overflow: auto; float: left; margin-top: 10px">
+                <div id = "droppable" data-rss-id = "{{ entities.rssId }}" class = "rss_name">{{ entities.name }}</div>
+                {% for tag in entities.tag %}
+                    <div id = "dragToDelete" class = "rss_tags" data-tag-name = "{{ tag }}">{{ tag }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

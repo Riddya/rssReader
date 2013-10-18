@@ -1,0 +1,38 @@
+{% extends 'RSSReaderBundle::layout.html.twig' %}
+{% block body %}
+    <h1 class="title">Login</h1>
+
+    <p>
+        Insert Your Username & Password Data!
+    </p>
+
+    {% if error %}
+        <div class="error">{{ error.message }}</div>
+    {% endif %}
+
+    <form action="{{ path("login_check") }}" method="post" id="login">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="_password" />
+        </div>
+
+
+        {#
+       Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ РєРѕРЅС‚СЂРѕР»РёСЂРѕРІР°С‚СЊ URL, РЅР° РєРѕС‚РѕСЂС‹Р№ РїРµСЂРµРЅР°РїСЂР°РІРёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ:
+       <input type="hidden" name="_target_path" value="/account" />
+   #}
+
+        <button type="submit" class="sf-button">
+            <span class="border-l">
+                <span class="border-r">
+                    <span class="btn-bg">Login</span>
+                </span>
+            </span>
+        </button>
+    </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'RSSReaderBundle::layout.html.twig' %}
+
+{% block title rss.channel.title %}
+
+    {% block content %}
+        <a href="{{ path('rss_list') }}">RSS Feeds List</a><br>
+        <h1>{{ rss.channel.title | raw }}</h1><br><br>
+        {% for item in rss.channel.item %}
+            <a href="{{ item.link }}" target = "_blank"><h3>{{ item.title | raw }}</h3></a><br>
+            {{ item.description | raw }}<br><br><br>{{ item.pubDate }}<br><br><hr>
+        {% endfor %}
+    {% endblock %}

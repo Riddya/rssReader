@@ -1,0 +1,42 @@
+<?php
+
+namespace RSS\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tags
+ *
+ * @ORM\Table(name="tags")
+ * @ORM\Entity
+ */
+class Tags
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tag", type="text", nullable=false)
+     */
+    private $tag;
+
+    /**
+     * @var \Rss
+     *
+     * @ORM\ManyToOne(targetEntity="Rss")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_rss", referencedColumnName="id")
+     * })
+     */
+    private $idRss;
+
+
+}

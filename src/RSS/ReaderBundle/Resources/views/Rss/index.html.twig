@@ -1,0 +1,56 @@
+{% extends 'RSSReaderBundle::layout.html.twig' %}
+{% block title "RSS Feeds List" %}
+
+{% block content -%}
+    {{ render(controller('RSSReaderBundle:Default:cloud')) }}<br>
+    <a href="{{ path('drag') }}">Drag Tags</a><br><br>
+    {{ form(form) }}
+    <br><br>
+    <ul>
+        <li>
+            <a href="{{ path('tags') }}">
+                Tags List
+            </a><br>
+            <a href="{{ path('show_common_rss') }}">
+                See random RSS Feeds
+            </a><br>
+            <a href="{{ path('home') }}">
+                Home Page
+            </a>
+        </li>
+    </ul>
+    <h1>Rss list</h1>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Createdate</th>
+                <th>Updatedate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('rss_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path("show_single_rss", {'id': entity.id}) }}">{{ entity.name }}</a></td>
+                <td>{{ entity.url }}</td>
+                <td>{% if entity.createDate %}{{ entity.createDate|date(dateFormat) }}{% endif %}</td>
+                <td>{% if entity.updateDate %}{{ entity.updateDate|date(dateFormat) }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('rss_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('rss_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

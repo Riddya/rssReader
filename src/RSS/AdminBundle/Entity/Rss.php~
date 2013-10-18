@@ -1,0 +1,53 @@
+<?php
+
+namespace RSS\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Rss
+ *
+ * @ORM\Table(name="rss")
+ * @ORM\Entity
+ */
+class Rss
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="text", nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="text", nullable=false)
+     */
+    private $url;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="date", nullable=false)
+     */
+    private $createDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="update_date", type="date", nullable=false)
+     */
+    private $updateDate;
+
+
+}

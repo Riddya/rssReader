@@ -1,0 +1,25 @@
+RSS\ReaderBundle\Entity\Tags:
+    type: entity
+    table: tags
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        tag:
+            type: text
+            nullable: false
+    manyToOne:
+        idRss:
+            targetEntity: Rss
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_rss:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

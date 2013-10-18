@@ -1,0 +1,12 @@
+rss_admin:
+    resource: "@RSSAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+rss_reader:
+    resource: "@RSSReaderBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

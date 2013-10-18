@@ -1,0 +1,45 @@
+{% extends "TwigBundle::layout.html.twig" %}
+
+{% block head %}
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    {% block stylesheets %}
+        <link href="{{ asset('bundles/rssreader/css/main.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/rssreader/css/jqueryUI.css') }}" rel="stylesheet" />
+    {% endblock %}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+    <script src="{{ asset('bundles/rssreader/jscripts/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/rssreader/jscripts/jquery.form.js') }}"></script>
+    <script src="{{ asset('bundles/rssreader/jscripts/jqueryUI.js') }}"></script>
+    {% block javascripts %}
+        <script src="{{ asset('bundles/rssreader/jscripts/main.js') }}"></script>
+    {% endblock %}
+{% endblock %}
+
+{% block title 'Demo Bundle' %}
+    {% block body %}
+        <div class="to_top">
+            <div class="to_top_opacity"></div>
+            <div class="to_top_panel" title="Up">
+                <div class="to_top_button">
+                    <span class="arrow">в†‘</span> <span class="label">up</span>
+                </div>
+            </div>
+        </div>
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <div class="flash-message">
+                <em>Notice</em>: {{ flashMessage }}
+            </div>
+        {% endfor %}
+
+        <div class="block">
+            {% block content %}{% endblock %}
+        </div>
+
+        {% if code is defined %}
+            <h2>Code behind this page</h2>
+            <div class="block">
+                <div class="symfony-content">{{ code|raw }}</div>
+            </div>
+        {% endif %}
+    {% endblock %}

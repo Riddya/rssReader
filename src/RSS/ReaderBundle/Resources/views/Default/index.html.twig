@@ -1,0 +1,20 @@
+{% extends 'RSSReaderBundle::layout.html.twig' %}
+
+{% block title "RSS Reader" %}
+
+{% block content %}
+    <span class = "index_message">Hello user, it's my first RSS Reader on Symfony2!</span><br>
+    <img src = "{{ asset('bundles/rssreader/images/rss.jpg') }}"/><br>
+    <a href="{{ path('about') }}">You can learn more about it</a><br>
+    <a href="{{ path('rss_list') }}">RSS Feeds List</a><br>
+    <a href="{{ path('tags') }}">Tags List</a><br><br>
+    <table style = "width: 500px; height: auto; overflow: auto; border: none">
+        <tbody>
+            <tr style="border: none">
+                <td id="xer" style="border: 1px solid black; height: 25px; overflow: hidden; width: 500px">
+                    <input id="tagInput" maxlength="10" type="text" style="overflow: auto; width: 500px; max-height: 25px; float: left; border: none; box-shadow: none"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
