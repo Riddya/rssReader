@@ -4,9 +4,9 @@
     {% block content %}
         <a href="{{ path('home') }}">Home Page</a>&nbsp;&nbsp;<a href="{{ path('rss_list') }}">Back to RSS List</a><br><br>
         {% for rss in stack %}
-            <h1 style = "font-size: 30px; color: black; text-shadow: 0px 0px 5px black">{{ rss.channel.title | raw }}</h1><br><br>
+            <h1 class = "rssTitle">{{ rss.channel.title | raw }}</h1><br><br>
             {% for item in rss.channel.item %}
-                <a href="{{ item.link }}" target = "_blank" style = "text-decoration: underline; text-shadow: 0px 0px 2px black"><h1>{{ item.title | raw }}</h1></a><br>
+                <a href="{{ item.link }}" target = "_blank" class = "rssLink"><h1>{{ item.title | raw }}</h1></a><br>
                 {{ item.description | raw }}<br><br><br>{{ item.pubDate }}<br><br><hr><hr><br><br>
             {% endfor %}
             <br><br><br>

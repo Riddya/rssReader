@@ -8,11 +8,12 @@
     {% endblock %}
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-    <script src="{{ asset('bundles/rssreader/jscripts/jquery.js') }}"></script>
-    <script src="{{ asset('bundles/rssreader/jscripts/jquery.form.js') }}"></script>
-    <script src="{{ asset('bundles/rssreader/jscripts/jqueryUI.js') }}"></script>
+    <script src="{{ asset('bundles/rssreader/js/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/rssreader/js/jquery.form.js') }}"></script>
+    <script src="{{ asset('bundles/rssreader/js/jqueryUI.js') }}"></script>
+    <script src="{{ asset('bundles/rssreader/js/main.js') }}"></script>
     {% block javascripts %}
-        <script src="{{ asset('bundles/rssreader/jscripts/main.js') }}"></script>
+
     {% endblock %}
 {% endblock %}
 
@@ -23,10 +24,10 @@
         {% else %}
             Hello <b>{{ app.user.username }}</b>&nbsp;&nbsp;<small><a href="{{ path('logout') }}">(logout)</a></small>
         {% endif %}
-        <div class="to_top">
-            <div class="to_top_opacity"></div>
-            <div class="to_top_panel" title="Up">
-                <div class="to_top_button">
+        <div class="toTopWrapper">
+            <div class="toTopOpacity"></div>
+            <div class="toTopPanel" title="Up">
+                <div class="toTopBtn">
                     <span class="arrow">↑</span> <span class="label">up</span>
                 </div>
             </div>

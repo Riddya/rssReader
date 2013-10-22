@@ -1,5 +1,7 @@
 {% extends 'RSSReaderBundle::layout.html.twig' %}
-
+{% block javascripts %}
+    <script src="{{ asset('bundles/rssreader/js/inputTag.js') }}"></script>
+{% endblock %}
 {% block title "RSS Reader" %}
 
 {% block content %}
@@ -8,11 +10,11 @@
     <a href="{{ path('about') }}">You can learn more about it</a><br>
     <a href="{{ path('rss_list') }}">RSS Feeds List</a><br>
     <a href="{{ path('tags') }}">Tags List</a><br><br>
-    <table style = "width: 500px; height: auto; overflow: auto; border: none">
+    <table class = "blockTable">
         <tbody>
             <tr style="border: none">
-                <td id="xer" style="border: 1px solid black; height: 25px; overflow: hidden; width: 500px">
-                    <input id="tagInput" maxlength="10" type="text" style="overflow: auto; width: 500px; max-height: 25px; float: left; border: none; box-shadow: none"/>
+                <td class="tagInputWrapper">
+                    <input id="tagInput" maxlength="10" type="text" class="tagInput"/>
                 </td>
             </tr>
         </tbody>

@@ -1,5 +1,7 @@
 {% extends 'RSSReaderBundle::layout.html.twig' %}
-
+{% block javascripts %}
+    <script src="{{ asset('bundles/rssreader/js/deleteTag.js') }}"></script>
+{% endblock %}
 {% block title "RSS Feeds Show" %}
 
 {% block content %}

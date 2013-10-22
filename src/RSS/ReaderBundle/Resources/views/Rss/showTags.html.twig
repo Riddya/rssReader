@@ -1,9 +1,9 @@
 
-<div style = "width: 100%; height: auto; min-height: 100px; overflow: auto">
-    <div style = "width: 8%; height: 100%; float: left; font-size: 30px;">Tags:</div>
-    <div style = "width: 92%; height: auto; overflow: auto; float: right; margin-top: 7px">
+<div class = "changeTagsWrapper">
+    <div class = "changeTagsTitle">Tags:</div>
+    <div class = "changeTags">
         {% for tag in tags %}
-            <div style = "width: auto; height: auto; float: left; margin-right: 15px; font-size: 20px;">{{ tag.tag }}<img data-tag-id="{{ tag.id }}" class = "delete_img" src="{{ asset("bundles/rssreader/images/delete.png") }}"/></div>
+            <div class = "deleteTags">{{ tag.tag }}<img data-tag-id="{{ tag.id }}" class = "delete_img" src="{{ asset("bundles/rssreader/images/delete.png") }}"/></div>
         {% endfor %}
     </div>
 </div>
