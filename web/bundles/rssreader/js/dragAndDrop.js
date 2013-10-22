@@ -7,13 +7,13 @@ jQuery.fn.extend({
         $(this).parent().children('.rss_tags').each(function() {
             tags.push($(this).html());
         });
-        tags.forEach(function(item) {
-            if (item == tag) {
+        for (i = 0; i< tags.length; i++) {
+            if (tags[i] == tag) {
                 anchor = 1;
             } else {
 
             }
-        });
+        }
         if (anchor == 1) {
             $(ui.draggable).draggable({revert: true});
         } else {
@@ -29,6 +29,7 @@ jQuery.fn.extend({
                     html = "<div class = 'rss_tags' data-tag-name='"+tag+"'>"+tag+"</div>";
                     last = $("div[data-rss-id = "+rssId+"]").parent();
                     $(html).appendTo(last);
+
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     alert(jqXHR);
@@ -87,7 +88,9 @@ droppableRss.prototype = {
 
     },
     dragElements: function() {
-        jQuery(this.allowed).draggable({helper: "clone", revert: "invalid", cursor: "pointer"}).enable();
+        jQuery(document).on("mouseover",this.allowed, function() {
+            jQuery(this).draggable({helper: "clone", revert: "invalid", cursor: "pointer"}).enable();
+        });
     }
 }
 
